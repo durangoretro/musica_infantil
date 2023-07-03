@@ -3,6 +3,7 @@
 #include <font.h>
 #include <music.h>
 #include "bin/cinco_lobitos_music.h"
+#include "bin/cinco_lobitos.h"
 
 int main() {
 	char number;
@@ -13,7 +14,7 @@ int main() {
 		number=getchar();
 		if(number=='1') {
 			clear_screen();
-			printStr(10, 50, font, WHITE, BLACK, "1");
+			draw_image(&cinco_lobitos);
 			playMelody(&cinco_lobitos_music);
 		}
 	
