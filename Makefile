@@ -24,7 +24,7 @@ $(BUILD_DIR)/main.o: $(BUILD_DIR)/main.s $(BUILD_DIR)
 
 
 $(BUILD_DIR)/musica.bin: $(BUILD_DIR) $(BUILD_DIR)/main.o
-	ld65 -C $(CFG) $(BUILD_DIR)/main.o $(DCLIB)/glyph.lib $(DCLIB)/system.lib $(DCLIB)/psv.lib $(DCLIB)/durango.lib -o $(BUILD_DIR)/musica.bin	
+	ld65 -C $(CFG) $(BUILD_DIR)/main.o $(DCLIB)/glyph.lib $(DCLIB)/system.lib $(DCLIB)/psv.lib $(DCLIB)/music.lib $(DCLIB)/durango.lib -o $(BUILD_DIR)/musica.bin	
 
 musica.dux: $(BUILD_DIR)/musica.bin
 	java -jar ${RESCOMP} -m SIGNER -n $$(git log -1 | head -1 | sed 's/commit //' | cut -c1-8) -t "MUSICA INFANTIL" -d "Las canciones de siempre" -i $(BUILD_DIR)/musica.bin -o musica.dux
