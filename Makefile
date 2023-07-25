@@ -16,7 +16,13 @@ $(BUILD_DIR)/cinco_lobitos.h: cinco_lobitos.png $(BUILD_DIR)
 $(BUILD_DIR)/cinco_lobitos_music.h: cinco_lobitos.musicxml $(BUILD_DIR)
 	java -jar ${RESCOMP} -n cinco_lobitos_music -m MUSIC -i cinco_lobitos.musicxml -o $(BUILD_DIR)/cinco_lobitos_music.h
 
-$(BUILD_DIR)/main.s: $(SOURCE_DIR)/main.c $(BUILD_DIR) $(BUILD_DIR)/cinco_lobitos.h $(BUILD_DIR)/cinco_lobitos_music.h
+$(BUILD_DIR)/nana_music.h: nana.musicxml $(BUILD_DIR)
+	java -jar ${RESCOMP} -n nana_music -m MUSIC -i nana.musicxml -o $(BUILD_DIR)/nana_music.h
+
+$(BUILD_DIR)/alegria_music.h: himno_alegria.musicxml $(BUILD_DIR)
+	java -jar ${RESCOMP} -n alegria_music -m MUSIC -i himno_alegria.musicxml -o $(BUILD_DIR)/alegria_music.h
+
+$(BUILD_DIR)/main.s: $(SOURCE_DIR)/main.c $(BUILD_DIR) $(BUILD_DIR)/cinco_lobitos.h $(BUILD_DIR)/cinco_lobitos_music.h $(BUILD_DIR)/nana_music.h $(BUILD_DIR)/alegria_music.h
 	cc65 -I $(DCINC) $(SOURCE_DIR)/main.c -t none --cpu 6502 -o $(BUILD_DIR)/main.s
 
 $(BUILD_DIR)/main.o: $(BUILD_DIR)/main.s $(BUILD_DIR)
