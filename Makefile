@@ -1,7 +1,7 @@
 SOURCE_DIR=.
 RESCOMP = ../rescomp/target/rescomp.jar
 BUILD_DIR = bin
-CFG=../dclib/cfg/durango16k.cfg
+CFG=../dclib/cfg/durango.cfg
 DCLIB=../dclib/bin
 DCINC=../dclib/inc
 

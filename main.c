@@ -20,7 +20,7 @@ int main() {
 		clear_screen();
 		printStr(10, 50, font, WHITE, BLACK, "Pulsa un numero...");
 		number=getchar();
-		if(number=='z') {
+		if(number=='Z') {
 			clear_screen();
 			printStr(10, 50, font, WHITE, BLACK, "Nana de Brahms");
 			playMelody(&nanaz_music);
@@ -37,7 +37,8 @@ int main() {
 		}
 		if(number=='3') {
 			clear_screen();
-			printStr(10, 50, font, WHITE, BLACK, "Himno a la alegría. Beethoven");
+			printStr(10, 50, font, WHITE, BLACK, "Himno a la alegria");
+			printStr(10, 60, font, WHITE, BLACK, "Beethoven");
 			playMelody(&alegria_music);
 		}
 	
